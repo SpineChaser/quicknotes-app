@@ -1,0 +1,123 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  line-height: 1.5;
+}
+
+header {
+  background: #176b87;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 { margin: 0 0 0.25rem; }
+header p { margin: 0; }
+
+main {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+form label { font-weight: bold; }
+
+form input,
+form select {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form input { flex: 1; min-width: 220px; }
+
+button {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #176b87;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover { background: #0e4f65; }
+
+#search-input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#error-message {
+  color: #b00020;
+  font-weight: bold;
+  min-height: 1.5em;
+}
+
+#notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.note-card {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+.category-personal { border-left: 6px solid #008c95; }
+.category-work { border-left: 6px solid #8b1e1e; }
+.category-study { border-left: 6px solid #1769aa; }
+
+.note-category {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.note-date { color: #666; font-size: 0.85rem; }
+.delete-button { background: #8b1e1e; margin-top: 0.5rem; }
+.delete-button:hover { background: #641414; }
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  form input,
+  form select,
+  form button {
+    width: 100%;
+  }
+}
