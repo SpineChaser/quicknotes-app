@@ -5,11 +5,23 @@ const errorMessage = document.querySelector("#error-message");
 const noteCount = document.querySelector("#note-count");
 const notesList = document.querySelector("#notes-list");
 const searchInput = document.querySelector("#search-input");
+const clearAllButton = document.querySelector("#clear-all");
 
 let notes = [];
 
+function updateCount() {
+  if (notes.length === 0) {
+    noteCount.textContent = "You have no notes yet.";
+  } else if (notes.length === 1) {
+    noteCount.textContent = "You have 1 note.";
+  } else {
+    noteCount.textContent = "You have " + notes.length + " notes.";
+  }
+}
+
 function render() {
   notesList.textContent = "";
+  updateCount();
 
   notes.forEach(function (note) {
     const li = document.createElement("li");
@@ -46,6 +58,16 @@ noteForm.addEventListener("submit", function (event) {
 
   const text = noteInput.value.trim();
 
+  if (text === "") {
+    errorMessage.textContent = "Please type a note first.";
+    return;
+  }
+
+  if (text.length > 200) {
+    errorMessage.textContent = "Notes must be 200 characters or fewer.";
+    return;
+  }
+
   const note = {
     id: Date.now(),
     text: text,
@@ -54,8 +76,16 @@ noteForm.addEventListener("submit", function (event) {
   };
 
   notes.push(note);
-  render();
+  errorMessage.textContent = "";
   noteInput.value = "";
+  render();
+});
+
+clearAllButton.addEventListener("click", function () {
+  if (notes.length > 0 && confirm("Delete all notes?")) {
+    notes = [];
+    render();
+  }
 });
 
 render();
