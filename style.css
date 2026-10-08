@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: BlinkMacSystemFont, sans-serif;
   background: #f4f4f4;
   color: #222;
   line-height: 1.5;
@@ -81,7 +81,7 @@ button:hover { background: #0e4f65; }
 }
 
 .note-card {
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -100,7 +100,7 @@ button:hover { background: #0e4f65; }
 }
 
 .note-date { color: #666; font-size: 0.85rem; }
-.delete-button { background: #8b1e1e; margin-top: 0.5rem; }
+.delete-button { background: #8b1e1e; margin-top: 0.5rem; padding: 0.5rem 1rem; border-radius: 6px; color: white; cursor: pointer; border: none; }
 .delete-button:hover { background: #641414; }
 
 footer {
